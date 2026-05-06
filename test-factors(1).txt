@@ -1,0 +1,18 @@
+#############################################################
+# Paste test factors here.
+# Check the documents for more details.
+# https://github.com/Microsoft/pict/blob/master/doc/pict.md
+#############################################################
+
+NumberOfMoves: 4, 5, 9, 10, 11
+Coins: 4, 5, 6
+playerPos: true, false
+Result: Good, Excellent, Bad
+
+if [NumberOfMoves] < 10 AND [Coins] > 5 then [Result] = "Good";
+
+if [playerPos] = "true" AND [Coins] >= 5 then [Result] = "Excellent";
+
+if [playerPos] = "true" AND [Coins] < 5 then [Result] = "Good";
+
+if [playerPos] = "true" AND [Coins] < 5 AND [NumberOfMoves] > 10 then [Result] = "Good";
